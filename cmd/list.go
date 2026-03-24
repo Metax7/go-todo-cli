@@ -8,8 +8,9 @@ import (
 )
 
 var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "List all tasks",
+	Use:     "list",
+	Aliases: []string{"ls"},
+	Short:   "List all tasks",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		tasks, err := loadTasks()
 		if err != nil {
